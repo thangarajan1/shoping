@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+<head>
+<title>Validation</title>
+</head>
+
+<style>
+
+body {
+margin:0px;
+padding:0px;
+background-color:lightblue;
+}
+
+form{
+border:2px solid black;
+margin:100px 0px 0px 500px;
+width:300px;
+padding:20px;
+box-shadow:2px 2px 20px black;
+border:none;
+border-radius:30px;
+}
+
+label{
+display:inline-block;
+margin-top:20px;
+font-size:20px;
+text-shadow:5px 5px 10px black;
+}
+
+input {
+position:absolute;
+display:block;
+padding:10px;
+width:280px;
+margin-top:-15px;
+border-style:none none solid none;
+border-color:black;
+background:transparent;
+}
+
+.contain i {
+display:none;
+position:absolute;
+margin:-25px 0px 0px 270px; 
+}
+
+.error i.fa-solid{
+display:block;
+color:red;
+}
+
+.success i.fa-regular{
+display:block;
+color:green;
+}
+
+small {
+display:none;
+margin-top:5px;
+position:absolute;
+}
+
+.error small{
+color:red;
+display:block;
+}
+
+.error input{
+border:2px solid red;
+
+}
+
+.success input{
+border:2px solid green;
+display:block;
+}
+
+button{
+display:block;
+margin-top:20px;
+padding:15px;
+width:280px;
+height:50px;
+background:transparent;
+box-shadow:2px 2px 10px black;
+border:none;
+border-radius:30px;
+font-size:20px;
+}
+
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<body>
+
+<div class="contain">
+<form id="form">
+<div class="value">
+<label for="name">Name:</label><br><br>
+<input type="text" placeholder="Enter Your Name" id="name"><br>
+<i class="fa-solid fa-circle-exclamation fa-shake"></i>
+<i class="fa-regular fa-circle-check"></i>
+<small>error message</small>
+</div>
+
+<div class="value">
+<label for="email">Email:</label><br><br>
+<input type="email" id="email" placeholder="Enter Your Email"><br>
+<i class="fa-solid fa-circle-exclamation fa-shake"></i>
+<i class="fa-regular fa-circle-check"></i>
+<small>error message</small>
+</div>
+
+<div class="value">
+<label for="pass">Password:</label><br><br>
+<input type="Password" id="pass" placeholder="Enter Your Password"><br>
+<i class="fa-solid fa-circle-exclamation fa-shake"></i>
+<i class="fa-regular fa-circle-check"></i>
+<small>error message</small>
+</div>
+
+<div class="value">
+<label for="cpass">Confirm Password:</label><br><br>
+<input type="cpass" id="cpass" placeholder="Enter Your Password"><br>
+<i class="fa-solid fa-circle-exclamation fa-shake"></i>
+<i class="fa-regular fa-circle-check"></i>
+<small>error message</small>
+</div>
+
+<button>Submit</button><br>
+</form>
+</div>
+
+<script>
+
+const form = document.getElementById("form");
+const name= document.getElementById("name");
+const email = document.getElementById("email");
+const pass = document.getElementById("pass");
+const cpass = document.getElementById("cpass");
+
+form.addEventListener("submit",function(event){
+
+event.preventDefault();
+check();
+
+});
+
+function check(){
+
+const nameValue = name.value.trim();
+const emailValue = email.value.trim();
+const passValue = pass.value.trim();
+const cpassValue = cpass.value.trim();
+
+//User Name...
+
+if(nameValue === ""){
+setError(name,"Username Is Cannot Be Blank");
+}
+else {
+setSuccess(name);
+}
+
+
+//Email....
+
+if(emailValue === ""){
+setError(email,"Email Is Cannot Be Blank");
+}
+else if(!isValidEmail(emailValue)) {
+setError(email, "Please Enter valid email");
+}
+else {
+setSuccess(email);
+}
+
+//Password.....
+
+
+if(passValue === ""){
+setError(pass,"Password Is Cannot Be Blank");
+}
+else {
+setSuccess(pass);
+}
+
+//Confirm Password....
+if(cpassValue === ""){
+setError(cpass,"Confirm Password Is Cannot Be Blank");
+}
+else if(passValue !== cpassValue){
+setError(cpass,"Not Matched Your Password");
+}
+else {
+setSuccess(cpass);
+}
+
+}
+
+function setError(input,message){
+const valid = input.parentElement;
+const small = valid.querySelector("small");
+valid.className = "error";
+small.innerText=message;
+//alert(message)
+//alert("check Your Form")
+}
+function setSuccess(input){
+const valid = input.parentElement;
+valid.className = "success";
+}
+
+const isValidEmail  = (email) => {
+return String(email).toLowerCase().match(/^[a-z]+[0-9]+@[a-z]+\.[a-z]{2,5}$/);
+}
+
+</script>
+
+
+
+</body>
+</html>

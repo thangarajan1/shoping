@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <style>
+.nav {
+  display: flex;
+  padding: 25px 50px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ceba95;
+}
+
+.input input {
+  width: 400px;
+  padding: 10px 15px;
+  border-radius: 30px;
+  background: transparent;
+  color: #400300;
+  font-size: 1.1rem;
+  border: 1px solid #cc9e56;
+  box-shadow: 5px 5px 10px #cc9e56;
+}
+.input input:hover {
+  box-shadow: inset -5px -5px 10px #cc9e56;
+}
+.input i {
+  color: #400300;
+  margin-left: -50px;
+}
+
+.nav a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: #400300;
+  border: 1px solid #cc9e56;
+  padding: 10px 30px;
+  border-radius: 30px;
+  box-shadow: 5px 5px 5px #cc9e56;
+}
+.nav a:hover {
+  box-shadow: inset -5px -5px 5px #cc9e56;
+}
+
+.nav2 ul {
+  list-style-type: none;
+  background-color: #cc9e56;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  text-transform: uppercase;
+}
+.nav2 a {
+  font-size: 20px;
+  text-decoration: none;
+  font-family: serif;
+  color: white;
+  padding: 10px;
+}
+.nav2 #active{
+background-color:#ceba95;
+padding:14px;
+}
+.nav2 a:hover {
+  color: #573636;
+  background-color: #ceba95;
+  padding:14px 10px;
+}
+
+.content {
+	margin-top:13px;
+  width: 200px;
+  position: absolute;
+  background-color: #ceba95;
+  padding-top: 15px;
+  margin-left: -40px;
+  display: none;
+  z-index: 1;
+  border-radius:30px;
+}
+.content a {
+  width: 100%;
+  float: left;
+  text-align: center;
+  color:black;
+}
+.content a:hover {
+  border-radius: 30px;
+  border: 2px solid white;
+  color: white;
+  background-color:#cc9e56/* rgba(109, 74, 69, 0.5)*/;
+}
+
+.drop:hover .content {
+  display: block;
+}
+
+.scroll{
+	display:flex;
+	flex-direction:column;
+	width:30%;
+	position:absolute;
+	margin-left:70%;
+	  display: none;
+	  z-index:1;
+}
+.cartStore {
+  background-color: white;
+  border-radius: 50px;
+
+  z-index: 1;
+  height:400px;
+  overflow:scroll;
+}
+
+.scroll .p {
+  bottom: 0px;
+  width: 100%;
+  padding: 10px 0px;
+  text-decoration: none;
+  background-color: #cc9e56;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  text-align: center;
+  border: 1px solid #ceba95;
+  color: #400300;
+  box-shadow: inset 5px 5px 5px #ceba95;
+  
+}
+.cartItem {
+  display: flex;
+ justify-content:space-between;
+ align-items:center;
+
+}
+.cartItem p {
+	width:250px;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.cartItem i {
+  cursor: pointer;
+}
+
+.cartStyle {
+
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  z-index:1;
+}
+  </style>
+  <body>
+    <div class="nav">
+      <img id="logo" src="livewire-logo.png" alt="shop" name="shop" />
+
+      <div class="input">
+        <input
+          type="text"
+          name="search"
+          placeholder="Search Your Product......"
+        /><i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+      <a href="shopLogin.html">Login</a>
+      <a href="#">register</a>
+    </div>
+
+    <div class="nav2">
+      <ul>
+        <li><a href="home.html">HOME</a></li>
+        <li><a href="#" id="active">ABOUT</a></li>
+        <li class="drop">
+          <a href="#">Products</a>
+          <div class="content">
+            <a href="dress.html">dresses</a>
+            <a href="book.html">books</a>
+            <a href="elect.html">electronics</a>
+          </div>
+        </li>
+        <li><a href="#">QR Scan</a></li>
+        <li><a href="#">Orders</a></li>
+        <li id="cart">
+          <a href="#" style=""
+            >Cart Item<i class="fa-solid fa-cart-shopping"></i><sup>0</sup></a
+          >
+        </li>
+      </ul>
+    </div>
+   <div class="scroll">
+      <div class="cartStore">
+	  
+	  
+        
+      </div>
+	  <p class="p">Close</p>
+      </div>
+
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text text-warning">Now It Started</p>
+              <h1 class="card-title display-4 fw-bold">
+                Our Dream is Global Learning Transformation
+              </h1>
+             
+ <div>    
+			  <br>
+               <h1 class="card-title">Company Story:</h1>
+			   <p class="cart-text">Share the journey of how the company started, any challenges overcome, and major milestones achieved.</p>
+			   
+			    <h1 class="card-title">Mission and Values: </h1>
+			   <p class="cart-text">Clearly articulate the company's mission statement and core values to show what it stands for.</p>
+			   
+			    <h1 class="card-title">Product or Service Information:</h1>
+			   <p class="cart-text">Provide details about the products or services offered, highlighting any unique features or benefits.</p>
+			   
+			    <h1 class="card-title">Customer Commitment:</h1>
+			   <p class="cart-text">Explain how the company prioritizes customer satisfaction and support, including policies like returns and refunds.</p>
+			   
+			    <h1 class="card-title">Team Bios:</h1>
+			   <p class="cart-text">Introduce key team members, including founders, executives, and other staff members, to humanize the brand.</p>
+			   
+              
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <img
+                src="https://cdn.pixabay.com/photo/2015/07/05/11/56/store-832188_960_720.jpg"
+                width="100%"
+                height="300px"
+                class="card-img-top"
+              />
+			   <h1 class="card-title">Social Proof:</h1>
+			   <p class="cart-text">Showcase customer testimonials, reviews, or awards to demonstrate credibility and trustworthiness.</p>
+			   
+			    <h1 class="card-title">Community Involvement:</h1>
+			   <p class="cart-text">If applicable, mention any community initiatives or charitable efforts the company is involved in.</p>
+			   
+			    <h1 class="card-title">Contact Information:</h1>
+			   <p class="cart-text"> Make it easy for customers to reach out with questions or concerns by providing contact details.</p>
+            </div>
+            <div class="row justify-content-around my-3">
+              <div class="col-md-4">
+                <div class="card">
+                  <div class="card-header">
+                    <h1 class="card-title">4.5+</h1>
+                    <p class="card-text">Rating</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="card">
+                  <div class="card-footer">
+                    <h1 class="card-title">23+</h1>
+                    <p class="card-text">welcome</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-around my-3">
+              <div class="col-md-4">
+                <div class="card">
+                  <div class="card-header">
+                    <h1 class="card-title">830+</h1>
+                    <p class="card-text">Products</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="card">
+                  <div class="card-footer">
+                    <h1 class="card-title">100k</h1>
+                    <p class="card-text">welcome</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="shop.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
